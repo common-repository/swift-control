@@ -1,0 +1,35 @@
+/* Activation notice */
+.swift-control-migration-notice  {
+	padding: 25px 20px;
+}
+
+.swift-control-migration-notice .notice-body {
+	display: flex;
+}
+
+.swift-control-migration-notice .notice-icon {
+	padding-right: 25px;
+}
+
+.swift-control-migration-notice .notice-icon img {
+	max-width: 55px;
+}
+
+.swift-control-migration-notice .notice-content {
+	width: 100%;
+}
+
+.swift-control-migration-notice .notice-content h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+.swift-control-migration-notice .notice-content > p {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.swift-control-migration-notice .notice-content > p:last-child {
+	margin-bottom: 0;
+}

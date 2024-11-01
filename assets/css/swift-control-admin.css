@@ -1,0 +1,933 @@
+/** Bootstrap override some styles, let's bring them back */
+.settings_page_swift-control {
+  background-color: #f1f1f1;
+}
+
+/**
+ * --------------------------------------------------
+ * Migration
+ * --------------------------------------------------
+ */
+.swift-control-migration-statuses {
+  margin-top: 7px;
+	margin-bottom: 8px;
+}
+
+.swift-control-migration-status {
+  display: none;
+	margin-bottom: 3px;
+}
+
+.swift-control-migration-status.migration-failed,
+.swift-control-migration-status.migration-failed i {
+  color: tomato;
+}
+
+.swift-control-migration-status i {
+  color: rgb(39, 223, 39);
+}
+
+.swift-control-migration-status.is-waiting {
+  display: block;
+}
+
+.swift-control-migration-status.is-waiting i {
+  display: none;
+}
+
+.swift-control-migration-status .loader {
+  display: none;
+  position: relative;
+	bottom: -4px;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.swift-control-migration-status.is-waiting .loader {
+  display: inline-flex;
+  justify-content: center;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.swift-control-migration-status.is-waiting .loader::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  display: block;
+  height: 1em;
+  border: 2px solid #bbb;
+  border-color: transparent transparent #aaa #aaa !important;
+  border-radius: 290486px;
+  -webkit-animation: loadingSpinAround 0.5s infinite linear;
+  animation: loadingSpinAround 0.5s infinite linear;
+}
+
+.swift-control-migration-status.is-done {
+  display: block;
+}
+
+/**
+ * --------------------------------------------------
+ * General
+ * --------------------------------------------------
+ */
+@-webkit-keyframes loadingSpinAround {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes loadingSpinAround {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.cols .col:last-child {
+  justify-self: flex-end;
+}
+
+.swift-control-settings .is-fullwidth {
+  width: 100%;
+}
+
+.swift-control-settings .label.checkbox-label {
+  padding-left: 30px;
+}
+
+.swift-control-settings .label > p:first-child {
+  margin-top: 0;
+}
+
+.swift-control-settings .widget-item .label {
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  font-size: inherit;
+  font-weight: 400;
+  color: inherit;
+  text-align: left;
+  vertical-align: inherit;
+  border-radius: 0;
+}
+
+.swift-control-page {
+  max-width: 1300px;
+}
+
+.swift-control-page > .cols {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.button.swift-control-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.swift-control-button i {
+  margin-right: 5px;
+}
+
+.swift-control-button.is-loading {
+  justify-content: center;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.swift-control-button.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  display: block;
+  height: 1em;
+  border: 2px solid #dbdbdb;
+  border-color: transparent transparent #fff #fff !important;
+  border-radius: 290486px;
+  -webkit-animation: loadingSpinAround 0.5s infinite linear;
+  animation: loadingSpinAround 0.5s infinite linear;
+}
+
+/**
+ * --------------------------------------------------
+ * Drag & locked handle
+ * --------------------------------------------------
+ */
+.swift-control-settings .is-locked .drag-wrapper {
+  cursor: default;
+}
+
+.swift-control-settings .drag-wrapper {
+  position: relative;
+  cursor: move;
+}
+
+.swift-control-settings .drag-handle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -2px;
+  width: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.swift-control-settings .drag-handle::before {
+  background-color: #dedede;
+  content: "";
+  display: block;
+  height: 2px;
+  -webkit-box-shadow: 0 10px 0 #dedede;
+  box-shadow: 0 6px 0 #dedede;
+}
+
+.swift-control-settings .locked-handle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: orange;
+  font-size: 16px;
+}
+
+.swift-control-settings .pro-unlock:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.swift-control-settings .pro-unlock {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/**
+ * --------------------------------------------------
+ * Saved status
+ * --------------------------------------------------
+ */
+.swift-control-settings .neatbox .saved-status.is-shown,
+.swift-control-settings .saved-status-bar.is-shown {
+  opacity: 1;
+}
+
+.swift-control-settings .neatbox .saved-status {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #47d87c;
+}
+
+.swift-control-settings .saved-status-bar {
+  position: fixed;
+  left: 0;
+  top: 32px;
+  padding: 10px 0;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  background-color: #47d87c;
+  opacity: 0;
+  z-index: 1; /* The bar should be on top of widget items. */
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/**
+ * --------------------------------------------------
+ * Active items area
+ * --------------------------------------------------
+ */
+.swift-control-settings .left-section {
+  min-height: 50px;
+  width: 55%;
+}
+
+.swift-control-settings .left-section .neatbox {
+  margin-bottom: 0;
+  max-width: 700px;
+}
+
+.swift-control-settings .left-section .widget-item:last-child {
+  border-bottom-width: 0;
+}
+
+.swift-control-settings .left-section .widget-item {
+  margin-bottom: 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+.swift-control-settings .left-section .widget-item .widget-default-area {
+  padding: 10px 20px 10px 10px;
+}
+
+/**
+ * --------------------------------------------------
+ * Available items area
+ * --------------------------------------------------
+ */
+.swift-control-settings .right-section .neatbox {
+  width: 100%;
+}
+
+.swift-control-settings .right-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-left: 50px;
+  width: 45%;
+}
+
+.swift-control-settings .right-section .neatbox {
+  max-width: 530px;
+}
+
+.swift-control-settings .right-section .widget-item:last-child {
+  margin-bottom: 0;
+}
+
+.swift-control-settings .right-section .widget-item {
+  padding: 10px 20px 10px 15px;
+}
+
+/**
+ * --------------------------------------------------
+ * Available items metabox
+ * --------------------------------------------------
+ */
+.swift-control-settings .available-items-box .widget-items:empty {
+  height: 55px;
+  background-color: #ebebeb;
+  -webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.03);
+}
+
+/**
+ * --------------------------------------------------
+ * Pro items metabox
+ * --------------------------------------------------
+ */
+.swift-control-settings .pro-items-box {
+  margin-top: 0;
+}
+
+/**
+ * --------------------------------------------------
+ * jQuery UI Sortable styling
+ * --------------------------------------------------
+ */
+.swift-control-settings .sortable-ghost {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #eee;
+  opacity: 0.75;
+}
+
+.swift-control-settings .ui-sortable-helper {
+  max-width: 530px !important;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.swift-control-settings .widget-item.ui-sortable-placeholder {
+  height: 70px !important;
+  visibility: visible !important;
+  background-color: #ebebeb;
+  -webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.03);
+}
+
+/**
+ * --------------------------------------------------
+ * Menu items
+ * --------------------------------------------------
+ */
+.swift-control-settings .widget-items {
+  margin-top: 0;
+  margin-bottom: 0;
+  min-height: 42px;
+}
+
+.swift-control-settings .widget-item {
+  position: relative;
+  margin-bottom: 8px;
+  font-weight: 600;
+  background-color: #fff;
+}
+
+.swift-control-settings .active-items .widget-item:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/**
+ * --------------------------------------------------
+ * Menu item's columns
+ * --------------------------------------------------
+ */
+.swift-control-settings .widget-item-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.swift-control-settings .widget-item .drag-wrapper {
+  width: 5%;
+}
+.swift-control-settings .widget-item .icon-wrapper {
+  position: relative;
+  width: 12%;
+}
+.swift-control-settings .widget-item .text-wrapper {
+  width: 25%;
+}
+.swift-control-settings .widget-item .extra-settings-wrapper {
+  width: 46%;
+}
+.swift-control-settings .widget-item .actions-wrapper {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 12%;
+  position: relative;
+  text-align: right;
+}
+
+/** Menu item columns on available items area **/
+
+.swift-control-settings .right-section .widget-item .drag-wrapper {
+  width: 8%;
+}
+
+.swift-control-settings .right-section .widget-item .icon-wrapper {
+  width: 12%;
+}
+
+.swift-control-settings .right-section .widget-item .text-wrapper {
+  width: 33%;
+}
+
+.swift-control-settings .right-section .widget-item .extra-settings-wrapper {
+  width: 27%;
+}
+
+.swift-control-settings .right-section .widget-item .actions-wrapper {
+  width: 17%;
+}
+
+.swift-control-settings .widget-item.is-locked .text-wrapper {
+  padding-left: 10px;
+  width: 75%;
+}
+
+/**
+ * --------------------------------------------------
+ * Menu item's control
+ * --------------------------------------------------
+ */
+
+.swift-control-settings .widget-item .widget-icon {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  background-color: #eee;
+}
+
+.swift-control-settings .widget-item .widget-icon .icon-picker-container {
+  line-height: normal;
+}
+
+.swift-control-settings .widget-icon .dashicons {
+  line-height: inherit;
+}
+
+.swift-control-settings .widget-item .icon-picker:hover {
+  background-color: rgba(134, 14, 230, 1);
+}
+
+.swift-control-settings .widget-item .icon-picker:hover:before {
+  opacity: 1;
+}
+
+.swift-control-settings .available-items-box .widget-item .icon-picker {
+  display: none;
+}
+
+.swift-control-settings .widget-item .icon-picker {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid rgba(134, 14, 230, 1);
+  outline: none;
+  cursor: pointer;
+}
+
+.swift-control-settings .edit-mode .icon-picker {
+  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.swift-control-settings .widget-item .icon-picker.use-icon::before {
+  content: "\f304";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  border-radius: 50%;
+}
+
+.swift-control-settings .widget-item .icon-picker::before {
+  content: "Select";
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.swift-control-settings .edit-mode .edit-mode-control {
+  display: block;
+}
+
+.swift-control-settings .edit-mode-control {
+  display: none;
+}
+
+.swift-control-settings
+  .redirect-url-setting
+  .field.is-horizontal
+  .field-label {
+  padding-left: 10px;
+}
+
+.swift-control-settings .redirect-url-setting .field.is-horizontal .field-body {
+  padding-left: 0;
+}
+
+.swift-control-settings .widget-item .edit-button {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 30px;
+  color: #777;
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+.swift-control-settings .widget-item .edit-button:hover {
+  color: #000;
+  background-color: #eee;
+}
+
+.swift-control-settings .edit-mode .edit-button,
+.swift-control-settings .edit-mode .edit-button:hover {
+  /* color: #000; */
+  /* background-color: #eee; */
+  background-color: #860ee6;
+  color: #fff;
+}
+
+/** Menu item's control on available items area **/
+
+.swift-control-settings .right-section .widget-item .widget-item-control {
+  display: none;
+}
+
+/**
+ * --------------------------------------------------
+ * Menu item fields
+ * --------------------------------------------------
+ */
+.swift-control-settings .widget-item-control {
+  color: #999;
+}
+
+.swift-control-settings .extra-settings-wrapper .widget-item-control {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.swift-control-settings .extra-settings-wrapper .new-tab-setting {
+  width: 40%;
+}
+
+.swift-control-settings .extra-settings-wrapper .widget-url-setting {
+  width: 60%;
+}
+
+.swift-control-settings .text-field {
+  font-size: 13px;
+}
+
+.swift-control-settings .edit-mode .text-field[readonly]:hover {
+  background-color: transparent;
+}
+
+.swift-control-settings .edit-mode .text-field:hover {
+  background-color: #f3f3f3;
+}
+
+.swift-control-settings .edit-mode .text-field:focus {
+  background-color: #f3f3f3;
+}
+
+.swift-control-settings .text-field:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.swift-control-settings .edit-mode .text-field[readonly] {
+  background-color: transparent;
+}
+
+.swift-control-settings .edit-mode .text-field {
+  background-color: #f5f5f5;
+}
+
+.swift-control-settings .text-field[readonly] {
+  background-color: transparent;
+  border-width: 0;
+  color: #000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.swift-control-settings .text-field {
+  width: 100%;
+  border-width: 0;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+/**
+ * --------------------------------------------------
+ * Icon picker
+ * --------------------------------------------------
+ */
+.swift-control-settings .iconpicker-popover {
+  /** Must be on top of WordPress admin's side widget */
+  z-index: 9991;
+}
+
+.swift-control-settings .available-items-box .iconpicker-popover {
+  display: none !important;
+}
+
+.swift-control-settings .iconpicker-popover,
+.swift-control-settings .iconpicker-popover * {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.swift-control-settings .iconpicker-popover {
+  overflow: hidden;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.swift-control-settings .iconpicker-popover .iconpicker-search {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.swift-control-settings .iconpicker-popover .popover-title {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/**
+ * --------------------------------------------------
+ * Menu settings area
+ * --------------------------------------------------
+ */
+.swift-control-settings .general-settings-area,
+.swift-control-settings .export-import-area {
+  position: relative;
+}
+
+.swift-control-settings .general-settings-area .neatbox,
+.swift-control-settings .export-import-area .neatbox {
+  margin-bottom: 0;
+  max-width: 700px;
+}
+
+/**
+ * --------------------------------------------------
+ * Color picker
+ * --------------------------------------------------
+ */
+.iris-picker-inner {
+  display: grid;
+  grid-template-columns: 1fr 20px 20px;
+  grid-gap: 7px;
+}
+
+.iris-picker-inner > * {
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+/**
+ * --------------------------------------------------
+ * Role multiselect
+ * --------------------------------------------------
+ */
+.swift-control-settings
+  .select2-container--default
+  .select2-selection--multiple
+  .select2-selection__rendered {
+  display: flex;
+}
+
+.swift-control-settings .select2-label .select2-container {
+  display: block;
+}
+
+@media (max-width: 1200.32px) {
+  /** Menu item's columns width */
+  .swift-control-settings .widget-item .drag-wrapper {
+    width: 10%;
+  }
+  .swift-control-settings .widget-item .icon-wrapper {
+    width: 15%;
+  }
+  .swift-control-settings .widget-item .text-wrapper {
+    width: 30%;
+  }
+  .swift-control-settings .widget-item .extra-settings-wrapper {
+    width: 27%;
+  }
+  .swift-control-settings .widget-item .actions-wrapper {
+    width: 18%;
+  }
+
+  /** Menu item's columns width on available items area */
+  .swift-control-settings .right-section .widget-item .icon-wrapper {
+    width: 17%;
+  }
+
+  .swift-control-settings .right-section .widget-item .text-wrapper {
+    width: 40%;
+  }
+
+  .swift-control-settings .right-section .widget-item .extra-settings-wrapper {
+    width: 20%;
+  }
+
+  .swift-control-settings .right-section .widget-item .actions-wrapper {
+    width: 13%;
+  }
+
+  .swift-control-settings .widget-item.is-locked .text-wrapper {
+    width: 75%;
+  }
+}
+
+@media (max-width: 991.32px) {
+  /** Available items area */
+  .swift-control-settings .right-section .widget-item {
+    padding-left: 10px;
+  }
+
+  /** Menu item's columns width */
+  .swift-control-settings .widget-item .drag-wrapper {
+    width: 5%;
+  }
+  .swift-control-settings .widget-item .icon-wrapper {
+    width: 12%;
+  }
+  .swift-control-settings .widget-item .text-wrapper {
+    width: 33%;
+  }
+  .swift-control-settings .widget-item .extra-settings-wrapper {
+    width: 35%;
+  }
+  .swift-control-settings .widget-item .actions-wrapper {
+    width: 15%;
+  }
+
+  /** Menu item's columns width on available items area */
+  .swift-control-settings .right-section .widget-item .icon-wrapper {
+    width: 12%;
+  }
+
+  .swift-control-settings .right-section .widget-item .text-wrapper {
+    width: 33%;
+  }
+
+  .swift-control-settings .right-section .widget-item .extra-settings-wrapper {
+    width: 30%;
+  }
+
+  .swift-control-settings .right-section .widget-item .actions-wrapper {
+    width: 17%;
+  }
+
+  .swift-control-settings .widget-item.is-locked .text-wrapper {
+    width: 75%;
+  }
+
+  .swift-control-settings .left-section,
+  .swift-control-settings .right-section,
+  .swift-control-settings .general-settings-area {
+    width: 100%;
+  }
+
+  .swift-control-settings .right-section {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
+  .swift-control-settings .left-section .neatbox,
+  .swift-control-settings .right-section .neatbox,
+  .swift-control-settings .general-settings-area .neatbox {
+    max-width: 100%;
+  }
+
+  .swift-control-settings .ui-sortable-helper {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 575.32px) {
+  /** Active items area */
+  .swift-control-settings .left-section .widget-item {
+    padding-right: 10px;
+  }
+
+  /** Available items area */
+  .swift-control-settings .right-section .widget-item {
+    padding-right: 10px;
+  }
+
+  /** Menu item's columns width */
+  .swift-control-settings .widget-item .drag-wrapper,
+  .swift-control-settings .right-section .widget-item .drag-wrapper {
+    width: 7%;
+  }
+  .swift-control-settings .widget-item .icon-wrapper,
+  .swift-control-settings .right-section .widget-item .icon-wrapper {
+    width: 17%;
+  }
+  .swift-control-settings .widget-item .text-wrapper {
+    width: 29%;
+  }
+  .swift-control-settings .widget-item .extra-settings-wrapper {
+    width: 29%;
+  }
+  .swift-control-settings .widget-item .actions-wrapper {
+    width: 18%;
+  }
+
+  /** Menu item's columns width on available items area */
+  .swift-control-settings .right-section .widget-item .text-wrapper {
+    width: 45%;
+  }
+
+  .swift-control-settings .right-section .widget-item .extra-settings-wrapper {
+    width: 13%;
+  }
+
+  .swift-control-settings .right-section .widget-item .actions-wrapper {
+    width: 25%;
+  }
+
+  .swift-control-settings .widget-item.is-locked .text-wrapper {
+    width: 68%;
+  }
+
+  /** Drag & locked handle */
+  .swift-control-settings .drag-handle {
+    width: 15px;
+  }
+
+  /** Menu item's settings */
+  .swift-control-settings .widget-item .widget-icon {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 13px;
+  }
+
+  /** Menu item's settings on available items area **/
+  .swift-control-settings .right-section .widget-item .widget-icon {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+  }
+}
